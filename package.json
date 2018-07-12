@@ -12,7 +12,6 @@
   "private": true,
   "dependencies": {
     "@agm/core": "^1.0.0-beta.3",
-    "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
@@ -22,8 +21,12 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "@types/googlemaps": "^3.30.11",
+    "@types/jquery": "^3.3.4",
     "agm-direction": "^0.6.0",
+    "bootstrap": "^4.1.2",
     "core-js": "^2.5.4",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.3",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },

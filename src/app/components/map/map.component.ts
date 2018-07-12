@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MouseEvent} from '@agm/core';
 
 export const agency = {
@@ -359,28 +359,36 @@ export const transfers = [
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent {
+export class MapComponent implements OnInit {
   // info
-  info = {
+  public destination: {};
+  public info = {
     name: agency.agency_name,
     url: agency.agency_url,
     phone: agency.agency_phone
   };
-
-  // initial center position for the map
-  lat = 37.752240;
-  lng = -122.418450;
-
-  // google maps zoom level
-  zoom = 13;
-
-  markers: Marker[] = stops.map(item => {
+  public lat = 37.752240;
+  public lng = -122.418450;
+  public markers: Marker[] = stops.map(item => {
     return {lat: item.stop_lat,
       lng: item.stop_lon,
       label: `${item.stop_name}`,
       draggable: false
     };
   });
+  public origin: {};
+
+  // google maps zoom level
+  public zoom = 13;
+
+  ngOnInit() {
+    this.getDirection();
+  }
+
+  getDirection() {
+    this.origin = { lat: 24.799448, lng: 120.979021 };
+    this.destination = { lat: 24.799524, lng: 120.975017 };
+  }
 
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`);

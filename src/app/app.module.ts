@@ -5,6 +5,9 @@ import {AppComponent} from './app.component';
 import {FormsModule} from '@angular/forms';
 import {MapComponent} from './components/map/map.component';
 import {AgmCoreModule} from '@agm/core';
+import {AgmDirectionModule} from 'agm-direction';
+import {BootstrapSwitchModule} from 'angular2-bootstrap-switch';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   bootstrap: [AppComponent, MapComponent],
@@ -18,6 +21,7 @@ import {AgmCoreModule} from '@agm/core';
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
       apiKey: 'AIzaSyBlGHDqTQRHVtz99LMLV2mw6d8ZkY7OCdM'
     }),
+    AgmDirectionModule,
     BrowserModule,
     FormsModule
   ],

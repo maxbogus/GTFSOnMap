@@ -2,6 +2,8 @@
 <p><a [href]="info.url" target="_blank">Official Website</a></p>
 <p><a href="tel:{{info.phone}}">{{info.phone}}</a></p>
 
+<!--<button type="button" class="btn btn-primary">Route</button>-->
+
 <agm-map
   [latitude]="lat"
   [longitude]="lng"
@@ -24,4 +26,5 @@
     </agm-info-window>
 
   </agm-marker>
+  <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
 </agm-map>
