@@ -1,5 +1,6 @@
-<h1>Angular Google Maps (AGM) Demo</h1>
-<p><a href="https://angular-maps.com/" target="_blank">Official Website</a></p>
+<h1>{{info.name}}</h1>
+<p><a [href]="info.url" target="_blank">Official Website</a></p>
+<p><a href="tel:{{info.phone}}">{{info.phone}}</a></p>
 
 <agm-map
   [latitude]="lat"
@@ -23,12 +24,4 @@
     </agm-info-window>
 
   </agm-marker>
-
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
-              [radius]="5000"
-              [fillColor]="'red'"
-              [circleDraggable]="true"
-              [editable]="true">
-  </agm-circle>
-
 </agm-map>
