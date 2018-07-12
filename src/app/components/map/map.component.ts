@@ -377,6 +377,7 @@ export class MapComponent implements OnInit {
     };
   });
   public origin: {};
+  public showRoute = true;
 
   // google maps zoom level
   public zoom = 13;
@@ -388,6 +389,11 @@ export class MapComponent implements OnInit {
   getDirection() {
     this.origin = { lat: 24.799448, lng: 120.979021 };
     this.destination = { lat: 24.799524, lng: 120.975017 };
+  }
+
+  public switchMapMode() {
+    console.log(this.showRoute);
+    this.showRoute = !this.showRoute;
   }
 
   clickedMarker(label: string, index: number) {

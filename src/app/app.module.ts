@@ -6,8 +6,6 @@ import {FormsModule} from '@angular/forms';
 import {MapComponent} from './components/map/map.component';
 import {AgmCoreModule} from '@agm/core';
 import {AgmDirectionModule} from 'agm-direction';
-import {BootstrapSwitchModule} from 'angular2-bootstrap-switch';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   bootstrap: [AppComponent, MapComponent],

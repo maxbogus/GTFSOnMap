@@ -2,7 +2,7 @@
 <p><a [href]="info.url" target="_blank">Official Website</a></p>
 <p><a href="tel:{{info.phone}}">{{info.phone}}</a></p>
 
-<!--<button type="button" class="btn btn-primary">Route</button>-->
+<button type="button" class="btn btn-primary" (click)="switchMapMode()">Route</button>
 
 <agm-map
   [latitude]="lat"
@@ -17,6 +17,7 @@
     (markerClick)="clickedMarker(m.label, i)"
     [latitude]="m.lat"
     [longitude]="m.lng"
+    [visible]="!showRoute"
     label=""
     [markerDraggable]="m.draggable"
     (dragEnd)="markerDragEnd(m, $event)">
@@ -26,5 +27,5 @@
     </agm-info-window>
 
   </agm-marker>
-  <agm-direction [origin]="origin" [destination]="destination"></agm-direction>
+  <agm-direction [visible]="showRoute" [origin]="origin" [destination]="destination"></agm-direction>
 </agm-map>
