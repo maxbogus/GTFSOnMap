@@ -1,8 +1,11 @@
-<h1>{{info.name}}</h1>
-<p><a [href]="info.url" target="_blank">Official Website</a></p>
-<p><a href="tel:{{info.phone}}">{{info.phone}}</a></p>
-
-<button type="button" class="btn btn-primary" (click)="switchMapMode()">Route</button>
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{info.name}}</h5>
+    <p class="card-text"><a [href]="info.url" target="_blank">Official Website</a></p>
+    <p class="card-text"><a href="tel:{{info.phone}}">{{info.phone}}</a></p>
+    <button type="button" class="btn btn-primary" (click)="switchMapMode()">{{showText()}}</button>
+  </div>
+</div>
 
 <agm-map
   [latitude]="lat"

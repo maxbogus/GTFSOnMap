@@ -395,6 +395,10 @@ export class MapComponent implements OnInit {
     this.showRoute = !this.showRoute;
   }
 
+  public showText() {
+    return (this.showRoute) ? 'Hide route' : 'Show route';
+  }
+
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`);
   }
