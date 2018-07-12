@@ -377,22 +377,21 @@ export class MapComponent implements OnInit {
     };
   });
   public origin: {};
-  public showRoute = true;
+  public showRoute = false;
 
   // google maps zoom level
-  public zoom = 13;
+  public zoom = 12;
 
   ngOnInit() {
     this.getDirection();
   }
 
   getDirection() {
-    this.origin = { lat: 24.799448, lng: 120.979021 };
-    this.destination = { lat: 24.799524, lng: 120.975017 };
+    this.origin = { lat: stops[0].stop_lat, lng: stops[0].stop_lon };
+    this.destination = { lat: stops[stops.length - 1].stop_lat, lng: stops[stops.length - 1].stop_lon };
   }
 
   public switchMapMode() {
-    console.log(this.showRoute);
     this.showRoute = !this.showRoute;
   }
 

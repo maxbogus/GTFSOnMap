@@ -27,5 +27,5 @@
     </agm-info-window>
 
   </agm-marker>
-  <agm-direction [visible]="showRoute" [origin]="origin" [destination]="destination"></agm-direction>
+  <agm-direction *ngIf="showRoute" [visible]="showRoute" [origin]="origin" [destination]="destination"></agm-direction>
 </agm-map>
