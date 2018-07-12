@@ -14,12 +14,12 @@
     (markerClick)="clickedMarker(m.label, i)"
     [latitude]="m.lat"
     [longitude]="m.lng"
-    [label]="m.label"
+    [label]="i"
     [markerDraggable]="m.draggable"
     (dragEnd)="markerDragEnd(m, $event)">
 
     <agm-info-window>
-      <strong>InfoWindow content</strong>
+      <strong>{{m.label}}</strong>
     </agm-info-window>
 
   </agm-marker>

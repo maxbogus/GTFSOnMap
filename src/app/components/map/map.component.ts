@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {MouseEvent} from '@agm/core';
+import {s} from '@angular/core/src/render3';
 
 export const agency = [{
   agency_id: 'FunBus',
@@ -361,32 +362,38 @@ export const transfers = [
 })
 export class MapComponent {
   // initial center position for the map
-  lat = 51.673858;
-  lng = 7.815982;
-
-  markers: Marker[] = [
-    {
-      lat: 51.673858,
-      lng: 7.815982,
-      label: 'A',
-      draggable: true
-    },
-    {
-      lat: 51.373858,
-      lng: 7.215982,
-      label: 'B',
-      draggable: true
-    },
-    {
-      lat: 51.723858,
-      lng: 7.895982,
-      label: 'C',
-      draggable: true
-    }
-  ];
+  lat = 37.752240;
+  lng = -122.418450;
 
   // google maps zoom level
-  zoom = 8;
+  zoom = 13;
+
+  markers: Marker[] = stops.map(item => {
+    return {lat: item.stop_lat,
+      lng: item.stop_lon,
+      label: `${item.stop_name}`,
+      draggable: false
+    };
+  });
+  //   {
+  //     lat: 51.673858,
+  //     lng: 7.815982,
+  //     label: 'A',
+  //     draggable: true
+  //   },
+  //   {
+  //     lat: 51.373858,
+  //     lng: 7.215982,
+  //     label: 'B',
+  //     draggable: true
+  //   },
+  //   {
+  //     lat: 51.723858,
+  //     lng: 7.895982,
+  //     label: 'C',
+  //     draggable: true
+  //   }
+  // ];
 
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`);
@@ -411,4 +418,15 @@ export interface Marker {
   lng: number;
   label?: string;
   draggable: boolean;
+}
+
+export interface Stop {
+  stop_id: string;
+  stop_name: string;
+  stop_desc?: string;
+  stop_lat: number;
+  stop_lon: number;
+  stop_url?: string;
+  location_type?: string;
+  parent_station?: string;
 }
