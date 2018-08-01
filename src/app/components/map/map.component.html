@@ -1,5 +1,11 @@
-<h1>Angular Google Maps (AGM) Demo</h1>
-<p><a href="https://angular-maps.com/" target="_blank">Official Website</a></p>
+<div class="card text-center" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{info.name}}</h5>
+    <p class="card-text"><a [href]="info.url" target="_blank">Official Website</a></p>
+    <p class="card-text"><a href="tel:{{info.phone}}">{{info.phone}}</a></p>
+    <button type="button" class="btn btn-primary" (click)="switchMapMode()">{{showText()}}</button>
+  </div>
+</div>
 
 <agm-map
   [latitude]="lat"
@@ -14,21 +20,15 @@
     (markerClick)="clickedMarker(m.label, i)"
     [latitude]="m.lat"
     [longitude]="m.lng"
-    [label]="m.label"
+    [visible]="!showRoute"
+    label=""
     [markerDraggable]="m.draggable"
     (dragEnd)="markerDragEnd(m, $event)">
 
     <agm-info-window>
-      <strong>InfoWindow content</strong>
+      <strong>{{m.label}}</strong>
     </agm-info-window>
 
   </agm-marker>
-
-  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
-              [radius]="5000"
-              [fillColor]="'red'"
-              [circleDraggable]="true"
-              [editable]="true">
-  </agm-circle>
-
+  <agm-direction *ngIf="showRoute" [visible]="showRoute" [origin]="origin" [destination]="destination"></agm-direction>
 </agm-map>

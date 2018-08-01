@@ -1,5 +1,5 @@
 agm-map {
-  height: 300px;
+  height: 600px;
 }
 
 
@@ -9,4 +9,10 @@ agm-map {
 
 a {
   color: darkblue;
+}
+
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
